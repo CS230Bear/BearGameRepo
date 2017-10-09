@@ -34,7 +34,7 @@ public class Game implements Runnable
 	{
 		
 	}
-	
+	// here things show up on screen
 	private void render()
 	{
 		bs = display.getCanvas().getBufferStrategy();
@@ -45,15 +45,15 @@ public class Game implements Runnable
 		}
 		g = bs.getDrawGraphics();
 	// Here you create shapes and color them etc
-		g.setColor(Color.LIGHT_GRAY);
+		g.setColor(Color.magenta);
 		g.fillRect(0,0, width, height);
 	// Creates non-interactable platforms "platform"
 		
 		g.setColor(Color.BLACK);
-		g.fillRect(0, 550, width, 300);
+		g.fillRect(0, 450, width, 420);
 		
 		g.setColor(Color.GREEN);
-		g.fillRect(100, 450, 100, 15);
+		g.fillRect(100, 400, 100, 15);
 		
 		g.setColor(Color.GREEN);
 		g.fillRect(300, 200, 100, 15);
