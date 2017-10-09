@@ -6,6 +6,7 @@ public class StandBear {
 	private int moveSpeed;
 	private int xPosition;
 	private int yPosition;
+	private String form;
 
 
 public StandBear() {
@@ -15,15 +16,17 @@ public StandBear() {
 	this.moveSpeed = 0;
 	this.xPosition = 0;
 	this.yPosition = 0;
+	this.form ="";
 }
 
-public StandBear(int health, int jumpHeight, int moveSpeed, int xPosition, int yPosition)
+public StandBear(int health, int jumpHeight, int moveSpeed, int xPosition, int yPosition, String form)
 {
 	this.health = health;
 	this.jumpHeight = jumpHeight;
 	this.moveSpeed = moveSpeed;
 	this.xPosition = xPosition;
 	this.yPosition = yPosition;
+	this.form = form;
 }
 
 public StandBear(StandBear b) {
@@ -32,7 +35,7 @@ public StandBear(StandBear b) {
 	this.moveSpeed = b.getMoveSpeed(7);
 	this.xPosition = b.getXPosition();
 	this.yPosition = b.getYPosition();
-	
+	this.form = b.getForm();
 }
 
 public int getHealth(int health)
@@ -60,6 +63,11 @@ public int getYPosition()
 	return yPosition;
 }
 
+public String getForm()
+{
+	return form;
+}
+
 public void setHealth(int health)
 {
 	this.health = health;
@@ -83,6 +91,11 @@ public void setXPosition(int xPosition)
 public void setYPosition(int yPosition)
 {
 	this.yPosition = yPosition;
+}
+
+public void setForm(String form)
+{
+	this.form = form;
 }
 
 
