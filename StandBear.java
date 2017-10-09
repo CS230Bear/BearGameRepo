@@ -1,5 +1,5 @@
 
-public class StandBear {
+public class StandBear {//class variables
 
 	private int health;
 	private int jumpHeight;
@@ -9,7 +9,7 @@ public class StandBear {
 	private String form;
 
 
-public StandBear() {
+public StandBear() {//default constructor
 	
 	this.health = 0;
 	this.jumpHeight = 0;
@@ -19,7 +19,7 @@ public StandBear() {
 	this.form ="";
 }
 
-public StandBear(int health, int jumpHeight, int moveSpeed, int xPosition, int yPosition, String form)
+public StandBear(int health, int jumpHeight, int moveSpeed, int xPosition, int yPosition, String form)//standard constructor
 {
 	this.health = health;
 	this.jumpHeight = jumpHeight;
@@ -29,7 +29,7 @@ public StandBear(int health, int jumpHeight, int moveSpeed, int xPosition, int y
 	this.form = form;
 }
 
-public StandBear(StandBear b) {
+public StandBear(StandBear b) {//copy constructor
 	this.health = b.getHealth(5);
 	this.jumpHeight = b.getJumpHeight(3);
 	this.moveSpeed = b.getMoveSpeed(7);
@@ -37,7 +37,7 @@ public StandBear(StandBear b) {
 	this.yPosition = b.getYPosition();
 	this.form = b.getForm();
 }
-
+//get and set methods
 public int getHealth(int health)
 {
 	return health;
