@@ -12,6 +12,12 @@ public class Sprite {
 		
 	}
 	
+	public Sprite(String texName) {
+		Texture tex = new Texture(texName);
+		image = tex.getImage();
+	}
+	
+	
 	public void render(Graphics g, double x, double y) {
 		g.drawImage(image, (int) x, (int) y, null);
 	}

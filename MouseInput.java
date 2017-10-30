@@ -7,8 +7,10 @@ public class MouseInput extends MouseAdapter  {
 	
 	private static final boolean[] buttons = new boolean[NUM_BUTTONS];
 	private static final boolean[] lastButtons = new boolean[NUM_BUTTONS];
-	private static int dragX = -1, dragY = -1;
+	//private static int dragX = -1, dragY = -1;
 	private static int x = -1, y = -1;
+	private static int lastX = x, lastY = y;
+	private static boolean moving;
 	
 	@Override
 	public void mousePressed(MouseEvent e) {
@@ -27,12 +29,21 @@ public class MouseInput extends MouseAdapter  {
 	}
 	
 	public void mouseMoved(MouseEvent e) {
-		super.mouseMoved(e);
+		x = e.getX();
+		y = e.getY();
+		//need to check for how long the mouse has been still?
+		
+		 moving = true;
+			
 	}
 	
 	public static void update() {
 		for(int i = 0; i < NUM_BUTTONS; i++) {
 			lastButtons[i] = buttons[i];
+		if(x != lastX || y != lastY) moving = false;
+		lastX = x;
+		lastY = y;
+			
 		}
 		
 		
@@ -48,6 +59,18 @@ public class MouseInput extends MouseAdapter  {
 	
 	public static boolean wasReleased(int button) {
 		return !isDown(button) && lastButtons[button];
+	}
+	
+	public static int getX() {
+		return x;
+	}
+	
+	public static int getY() {
+		return y;
+	}
+	
+	public static boolean isMoving() {
+		return moving;
 	}
 }
 
