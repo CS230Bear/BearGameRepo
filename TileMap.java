@@ -115,17 +115,24 @@ public class TileMap {
             	if(getTile(x, y) != null && getTile(x,y).isDoor() && pickup == 1) {
             	JOptionPane option = new JOptionPane(JOptionPane.showInputDialog(null, "Please Enter Credit card Number to continue: "));
             	
-            	load("final_level");
+            	load("perry");
+            	
             		//JOptionPane.showConfirmDialog(null, "Door");
             	}
             	else if (getTile(x, y) != null && getTile(x, y).isPickup()) {
             		pickup++;
             		if(pickup == 1)
             			setTile(x, y,null);
-            			
+            		
+            		
             		System.out.println(pickup);
             	}
             		
+            	else if (getTile(x,y) != null && getTile(x,y).isExit()) {
+            		JOptionPane.showMessageDialog(null, "You Win!");
+            		System.exit(0);
+            	}
+            	
             	else if (x < 0 || x >= width || (getTile(x, y) != null && getTile(x, y).isSolid())) {
                     if (vert) {
                         if (player.isFalling()) {
